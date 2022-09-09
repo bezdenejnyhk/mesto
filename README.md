@@ -21,7 +21,7 @@ Mesto: интерактивная страница, куда можно доба
 Javascript, HTML, CSS
 
 # Ссылка на страницу проекта
-
+https://bezdenejnyhk.github.io/mesto
 
 # Темы, изученные при работе над проектом
 
