@@ -1,0 +1,303 @@
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    src: url(../fonts/Inter-Regular.otf);
+  }
+  
+  @font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 900;
+    src: url(../fonts/Inter-Black.otf);
+  }
+
+  @font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    src: url(../fonts/Inter-MediumItalic.otf);
+  }
+
+.page {
+    max-width: 1280px;
+    background: #000000;
+    font-family: 'Inter', sans-serif;
+}
+
+.header {
+    max-width: 880px;
+    margin: 0 auto 40px;
+    padding-top: 45px;
+}
+
+.header__logo {
+    width: 142px;
+    height: 33px;
+}
+
+.header__line {
+    width: 880px;
+    opacity: 0.7;
+}
+
+.profile {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.profile__avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin-right: 30px;
+}
+
+.profile__info {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    justify-items: flex-start;
+    align-items: center;
+    grid-template-areas:
+    "name edit-button"
+    "about about";
+    margin-right: 244px;
+}
+
+.profile__info-name {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 42px;
+    line-height: 1.14;
+    color: #FFFFFF;
+    margin: 22px 18px 16px 0;
+}
+
+.profile__info-description {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    margin-bottom: 25px;
+    margin-top: 0;
+    color: #FFFFFF;
+}
+
+.profile__edit {
+    background-image: url(./images/Edit-Button.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+    background-color: #000000;
+    padding: 0;
+    margin: 22px 0 16px 0;
+    box-sizing: border-box;
+}
+
+.profile__edit:hover {
+    opacity: 0.6;
+}
+
+.profile__add {
+    text-align: center;
+    max-width: 150px;
+    height: 50px;
+    margin: 35px 0 35px 0;
+    cursor: pointer;
+}
+
+.profile__add:hover {
+    opacity: 0.6;
+}
+
+.cards {
+    max-width: 880px;
+    margin: 51px auto 66px;
+    display: grid;
+    justify-content: center;
+    justify-items: stretch;
+    grid-template-columns: repeat(auto-fill, 282px);
+    grid-column-gap: 17px;
+    grid-row-gap: 20px;
+}
+
+.cards__item {
+    max-width: 282px;
+    height: 361px;
+    background: #FFFFFF;
+    border-radius: 10px;
+}
+
+.cards__image {
+    max-width: 282px;
+    height: 282px;
+    border-radius: 10px 10px 0 0;
+}
+
+.cards__text {
+    font-style: normal;
+    font-weight: 900;
+    font-size: 24px;
+    line-height: 29px;
+    color: #000000;
+    margin: 0;
+    padding: 0;
+    width: 246px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.cards__like {
+    background-image: url(./images/Heart.png);
+    display: block;
+    text-align: center;
+    width: 22px;
+    height: 19px;
+    cursor: pointer;
+}
+
+.cards__like:hover::after {
+    content: '';
+    background-color: #fff;
+    width: 22px;
+    height: 19px;
+    position: absolute;
+    opacity: 0.5;
+}
+
+.footer {
+    max-width: 318px;
+    margin-left: 200px;
+    padding-bottom: 60px;
+    text-align: left;
+}
+
+.footer__copyright {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    color: #545454;
+    margin: 0;
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+
+.overlay.opened {
+    display: block;
+}
+
+.popap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.popap__conteiner {
+    position: relative;
+    width: 430px;
+    height: 330px;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+}
+
+.popap__close {
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    background-image: url(./images/Close-Icon.png);
+    background-repeat: no-repeat;
+    cursor: pointer;
+    padding: 0;
+    box-sizing: border-box;
+    border: 0;
+    right: -30px;
+    top: -30px;
+    background-color: transparent;
+}
+
+.popap__close:hover {
+    opacity: 0.6;
+}
+
+.popap__title {
+    font-style: normal;
+    font-weight: 900;
+    font-size: 24px;
+    line-height: 29px;
+    color: #000000;
+    text-align: left;
+    margin: 34px 64px 54px 36px;
+}
+
+.popap__input {
+    width: 358px;
+    height: 27px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+}
+
+.popap__input:focus {
+    outline: none;
+}
+
+.popap__name {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: #000000;
+    margin: 0 auto 30px;
+}
+
+.popap__description {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: #000000;
+    margin: 0 auto 48px;
+}
+
+.popap__save {
+    width: 358px;
+    height: 50px;
+    background: #000000;
+    color: #FFFFFF;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+    border-radius: 2px;
+    padding: 0;
+}
+
+.popap__save:hover {
+    opacity: 0.8;
+}

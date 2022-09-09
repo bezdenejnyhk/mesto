@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MestoRussia</title>
+    <link rel="stylesheet" href="./pages/index.css">
+    <script src='http://code.jquery.com/jquery-2.1.1.min.js'></script>
+</head>
+<body class="body">
+    <div class="page">
+        <header class="header">
+            <img class="header__logo" src="./images/Vector.png" alt="логотип место">
+            <img class="header__line" src="./images/Line.png" alt="линия-разделитель">
+        </header>
+        <main>
+            <section class="profile">
+                <img class="profile__avatar" src="./images/image.jpg" alt="Аватар">
+                <div class="profile__info">
+                    <h1 class="profile__info-name">Жак-Ив Кусто</h1>
+                    <button class="profile__edit"></button>
+                    <h2 class="profile__info-description">Исследователь океана</h2>
+                </div>
+                <img class="profile__add" src="./images/Add-Button.png" alt="кнопка-плюсик">
+            </section>
+            <section class="cards">
+                <div class="cards__item">
+                    <img class="cards__image" src="./images/kirill-pershin-1088404-unsplash.jpg" alt="Замок">
+                    <div class="cards__elements">
+                        <p class="cards__text">Карачаевск</p>
+                        <button class="cards__like" type="button"></button>
+                    </div>
+                </div>
+                <div class="cards__item">
+                    <img class="cards__image" src="./images/kirill-pershin-1404681-unsplash.png" alt="Замок">
+                    <div class="cards__elements">
+                        <p class="cards__text">Гора Эльбрус</p>
+                        <button class="cards__like" type="button"></button>
+                    </div>
+                </div>
+                <div class="cards__item">
+                    <img class="cards__image" src="./images/kirill-pershin-1556355-unsplash.png" alt="Замок">
+                    <div class="cards__elements">
+                        <p class="cards__text">Домбай</p>
+                        <button class="cards__like" type="button"></button>
+                    </div>
+                </div>
+                <div class="cards__item">
+                    <img class="cards__image" src="./images/baikal.png" alt="Зимний Байкал">
+                    <div class="cards__elements">
+                        <p class="cards__text">Байкал</p>
+                        <button class="cards__like" type="button"></button>
+                    </div>
+                </div>
+                <div class="cards__item">
+                    <img class="cards__image" src="./images/Karelia.png" alt="Шхеры">
+                    <div class="cards__elements">
+                        <p class="cards__text">Карелия</p>
+                        <button class="cards__like" type="button"></button>
+                    </div>
+                </div>
+                <div class="cards__item">
+                    <img class="cards__image" src="./images/Yralskieholm.png" alt="Уральские горы">
+                    <div class="cards__elements">
+                        <p class="cards__text">Урал</p>
+                        <button class="cards__like" type="button"></button>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer class="footer">
+            <p class="footer__copyright">© 2022 Mesto Russia</p>
+        </footer>
+    </div>
+    <div class="overlay">
+        <div class="popap">
+            <div class="popap__conteiner">
+                <button class="popap__close"></button>
+                <h3 class="popap__title">Редактировать профиль</h3>
+                <form action="">
+                    <input type="text" value="Жак-Ив Кусто" class="popap__input popap__name">
+                    <input type="text" value="Исследователь океана" class="popap__input popap__description">
+                    <button class="popap__save">Сохранить</button>
+                </form>    
+            </div>
+        </div>
+    </div>
+    <script src="./index.js"></script>
+</body>
+</html>
