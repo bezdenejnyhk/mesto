@@ -1,4 +1,4 @@
-.popap__description {
+.popup__input_description {
     font-style: normal;
     font-weight: 400;
     font-size: 14px;
@@ -8,7 +8,7 @@
 }
 
 @media screen and (max-width: 500px) {
-    .popap__description {
+    .popup__input_description {
         margin: 0 auto 45px;
     }
 }

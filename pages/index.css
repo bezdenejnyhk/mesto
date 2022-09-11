@@ -5,7 +5,6 @@
 
 @import url(../blocks/header/header.css);
 @import url(../blocks/header/__logo/header__logo.css);
-@import url(../blocks/header/__line/header__line.css);
 
 @import url(../blocks/profile/profile.css);
 @import url(../blocks/profile/__add/profile__add.css);
@@ -25,12 +24,12 @@
 @import url(../blocks/footer/footer.css);
 @import url(../blocks/footer/__copyright/footer__copyright.css);
 
-@import url(../blocks/overlay/overlay.css);
-@import url(../blocks/popap/popap.css);
-@import url(../blocks/popap/__close/popap__close.css);
-@import url(../blocks/popap/__conteiner/popap__conteiner.css);
-@import url(../blocks/popap/__description/popap__description.css);
-@import url(../blocks/popap/__input/popap__input.css);
-@import url(../blocks/popap/__name/popap__name.css);
-@import url(../blocks/popap/__save/popap__save.css);
-@import url(../blocks/popap/__title/popap__title.css);
+@import url(../blocks/popup/popup.css);
+@import url(../blocks/popup/__content/popup__content.css);
+@import url(../blocks/popup/__close/popup__close.css);
+@import url(../blocks/popup/__conteiner/popup__conteiner.css);
+@import url(../blocks/popup/__input/popup__input.css);
+@import url(../blocks/popup/__input/_description/popup__input_description.css);
+@import url(../blocks/popup/__input/_name/popup__input_name.css);
+@import url(../blocks/popup/__save/popup__save.css);
+@import url(../blocks/popup/__title/popup__title.css);

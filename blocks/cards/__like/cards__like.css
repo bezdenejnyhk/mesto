@@ -1,5 +1,5 @@
 .cards__like {
-    background-image: url(../../../images/Heart.png);
+    background-image: url(../../../images/Vector\ \(1\).svg);
     background-size: contain;
     background-repeat: no-repeat;
     background-color:transparent;
@@ -9,6 +9,7 @@
     transition: 0.2s ease;
     cursor: pointer;
     flex-shrink: 0;
+    padding: 0;
 }
 
 .cards__like:hover {
@@ -17,5 +18,5 @@
 
 .cards__like:active {
     opacity: 1;
-    background-image: url(../../../images/Heart_black.png);
+    background-image: url(../../../images/Union.svg);
   }
