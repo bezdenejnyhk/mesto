@@ -13,12 +13,3 @@
     align-items: center;
     font-family: 'Inter', sans-serif;
 }
-
-.popup_opened {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-}

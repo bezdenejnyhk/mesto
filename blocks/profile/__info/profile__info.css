@@ -2,7 +2,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     justify-items: flex-start;
-    align-items: center;
+    align-items: baseline;
     grid-template-areas:
     "name edit-button"
     "about about";
@@ -10,7 +10,7 @@
 
 @media screen and (max-width: 930px) {
     .profile__info {
-        grid-template-columns: repeat(1fr auto-fill);
+        grid-template-columns: repeat(1fr, auto-fill);
     }
 }
 
