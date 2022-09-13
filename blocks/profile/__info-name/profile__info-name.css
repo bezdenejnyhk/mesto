@@ -5,10 +5,11 @@
     font-size: 42px;
     line-height: 1.14;
     color: #FFFFFF;
-    margin: 22px 0 16px;
+    margin: 22px 0 8px;
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
+    text-align: center;
 }
 
 @media screen and (max-width: 880px) {
@@ -19,15 +20,13 @@
 
 @media screen and (max-width: 750px) {
     .profile__info-name {
-        margin: 22px 10px 14px 0;
-        width: 100%;
+        margin: 22px 0 14px 0;
     }
 }
 
 @media screen and (max-width: 500px) {
     .profile__info-name {
         max-width: 189px;
-        width: 100%;
         font-size: 27px;
         line-height: 33px;
     }
