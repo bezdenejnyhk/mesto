@@ -17,9 +17,11 @@
 
 @media screen and (max-width: 750px) {
     .profile__info {
+        justify-content: center;
         max-width: 282px;
-        grid-template-columns: 1fr auto;
-        margin-right: 0;
+        grid-template-columns: 189px 20px;
+        grid-column-gap: 10px;
+        margin-left: 0;
         justify-items: center;
     }
 }
