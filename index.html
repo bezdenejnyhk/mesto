@@ -23,55 +23,63 @@
                 <button class="profile__add" type="button"></button>
             </section>
             <section class="cards">
-                <div class="cards__item">
-                    <img class="cards__image" src="./images/kirill-pershin-1088404-unsplash.jpg" alt="Старая церковь-замок">
-                    <div class="cards__elements">
-                        <h2 class="cards__text">Карачаевск</h2>
-                        <button class="cards__like" type="button"></button>
-                    </div>
-                </div>
-                <div class="cards__item">
-                    <img class="cards__image" src="./images/kirill-pershin-1404681-unsplash.png" alt="Гора Эльбрус на закате">
-                    <div class="cards__elements">
-                        <h2 class="cards__text">Гора Эльбрус</h2>
-                        <button class="cards__like" type="button"></button>
-                    </div>
-                </div>
-                <div class="cards__item">
-                    <img class="cards__image" src="./images/kirill-pershin-1556355-unsplash.png" alt="Горы в снегу">
-                    <div class="cards__elements">
-                        <h2 class="cards__text">Домбай</h2>
-                        <button class="cards__like" type="button"></button>
-                    </div>
-                </div>
-                <div class="cards__item">
-                    <img class="cards__image" src="./images/baikal.png" alt="Зимний Байкал">
-                    <div class="cards__elements">
-                        <h2 class="cards__text">Байкал</h2>
-                        <button class="cards__like" type="button"></button>
-                    </div>
-                </div>
-                <div class="cards__item">
-                    <img class="cards__image" src="./images/Karelia.png" alt="Шхеры">
-                    <div class="cards__elements">
-                        <h2 class="cards__text">Карелия</h2>
-                        <button class="cards__like" type="button"></button>
-                    </div>
-                </div>
-                <div class="cards__item">
-                    <img class="cards__image" src="./images/Yralskieholm.png" alt="Уральские горы">
-                    <div class="cards__elements">
-                        <h2 class="cards__text">Урал</h2>
-                        <button class="cards__like" type="button"></button>
-                    </div>
-                </div>
-            </section>
+                <ul class="cards__item">
+                    <!--<li class="cards__item-element">
+                        <img class="cards__image" src="./images/kirill-pershin-1088404-unsplash.jpg" alt="Старая церковь-замок">
+                        <button class="cards__delete" type="button" aria-label="Кнопка Удалить"></button>
+                        <div class="cards__elements">
+                            <h2 class="cards__text">Карачаевск</h2>
+                            <button class="cards__like" type="button"></button>
+                        </div>
+                    </li>
+                    <li class="cards__item-element">
+                        <img class="cards__image" src="./images/kirill-pershin-1404681-unsplash.png" alt="Гора Эльбрус на закате">
+                        <button class="cards__delete" type="button" aria-label="Кнопка Удалить"></button>
+                        <div class="cards__elements">
+                            <h2 class="cards__text">Гора Эльбрус</h2>
+                            <button class="cards__like" type="button"></button>
+                        </div>
+                    </li>
+                    <li class="cards__item-element">
+                        <img class="cards__image" src="./images/kirill-pershin-1556355-unsplash.png" alt="Горы в снегу">
+                        <button class="cards__delete" type="button" aria-label="Кнопка Удалить"></button>
+                        <div class="cards__elements">
+                            <h2 class="cards__text">Домбай</h2>
+                            <button class="cards__like" type="button"></button>
+                        </div>
+                    </li>
+                    <li class="cards__item-element">
+                        <img class="cards__image" src="./images/baikal.png" alt="Зимний Байкал">
+                        <button class="cards__delete" type="button" aria-label="Кнопка Удалить"></button>
+                        <div class="cards__elements">
+                            <h2 class="cards__text">Байкал</h2>
+                            <button class="cards__like" type="button"></button>
+                        </div>
+                    </li>
+                    <li class="cards__item-element">
+                        <img class="cards__image" src="./images/Karelia.png" alt="Шхеры">
+                        <button class="cards__delete" type="button" aria-label="Кнопка Удалить"></button>
+                        <div class="cards__elements">
+                            <h2 class="cards__text">Карелия</h2>
+                            <button class="cards__like" type="button"></button>
+                        </div>
+                    </li>
+                    <li class="cards__item-element">
+                        <img class="cards__image" src="./images/Yralskieholm.png" alt="Уральские горы">
+                        <button class="cards__delete" type="button" aria-label="Кнопка Удалить"></button>
+                        <div class="cards__elements">
+                            <h2 class="cards__text">Урал</h2>
+                            <button class="cards__like" type="button"></button>
+                        </div>
+                    </li> -->
+                </ul>
+            </section> 
         </main>
         <footer class="footer">
             <p class="footer__copyright">© 2022 Mesto Russia</p>
         </footer>
     </div>
-        <div class="popup">
+        <div class="popup popup__edit">
             <div class="popup__conteiner">
                 <button class="popup__close" type="button"></button>
                 <form class="popup__content" name="EditProfile">
@@ -80,6 +88,36 @@
                     <input type="text" value="Исследователь океана" class="popup__input popup__input_type_description" name="EditDescription">
                     <button class="popup__save" type="submit">Сохранить</button>
                 </form>    
+            </div>
+        </div>
+        <div class="popup popup__add">
+            <div class="popup__conteiner popup__conteiner_add">
+                <button id="closeButton" class="popup__close" type="button"></button>
+                <form class="popup__content popup__content_add" name="EditCards">
+                    <h3 class="popup__title popup__title_add">Новое место</h3>
+                    <input type="text" value="Название" class="popup__input popup__input_type_title" name="EditTitle">
+                    <input type="text" value="Ссылка на картинку" class="popup__input popup__input_type_link" name="EditImages">
+                    <button class="popup__save popup__save_add" type="submit">Создать</button>
+                </form>    
+            </div>
+        </div>
+        <template class="cards__item-template">
+            <li class="cards__item-element">
+                <img class="cards__image" src=" " alt=" ">
+                <button class="cards__delete" type="button" aria-label="Кнопка Удалить"></button>
+                <div class="cards__elements">
+                    <h2 class="cards__text"></h2>
+                    <button class="cards__like" type="button" aria-label="Кнопка Нравиться"></button>
+                </div>
+            </li>
+        </template>
+        <div class="popup popup__image">
+            <div class="picture">
+              <figure class="picture__figure">
+                        <img class="picture__image" src=" " alt=" ">
+                        <figcaption class="picture__caption"></figcaption>
+                    </figure>
+              <button class="popup__close" type="button" aria-label="Закрыть" id="closeImage"></button>
             </div>
         </div>
     <script src="./scripts/index.js"></script>

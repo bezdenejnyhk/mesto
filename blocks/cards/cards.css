@@ -1,12 +1,6 @@
 .cards {
     max-width: 880px;
     margin: 46.25px auto 66px;
-    display: grid;
-    justify-content: center;
-    justify-items: stretch;
-    grid-template-columns: repeat(auto-fill, 282px);
-    grid-column-gap: 17px;
-    grid-row-gap: 20px;
 }
 
 @media screen and (max-width: 750px) {
