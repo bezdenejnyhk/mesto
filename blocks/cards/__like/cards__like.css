@@ -15,8 +15,3 @@
 .cards__like:hover {
     opacity: 0.5;
 }
-
-.cards__like:active {
-    opacity: 1;
-    background-image: url(../../../images/Union.svg);
-  }

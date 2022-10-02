@@ -1,0 +1,11 @@
+.picture__image {
+    width: 433px;
+    height: 540px;
+}
+
+@media screen and (max-width: 500px) {
+    .picture__image {
+        width: 240px;
+        height: 299px;
+    }
+}

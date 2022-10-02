@@ -1,5 +1,6 @@
 .picture {
-    width: 433px;
-    height: 540px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
     margin-bottom: 10px;
 }
