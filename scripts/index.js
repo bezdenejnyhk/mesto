@@ -1,13 +1,12 @@
-const openPopupButton = document.querySelector('.profile__edit');
-const closePopupButton = document.querySelector('.popup__close');
+const openPopupEditButton = document.querySelector('.profile__edit');
+const closePopupEditButton = document.querySelector('.popup__close');
 const popupEdit = document.querySelector('.popup_edit');
 
-let formElement = document.querySelector('.popup__content')
-let nameInput = document.querySelector('.popup__input_type_name');
-let jobInput = document.querySelector('.popup__input_type_description');
-let buttonSave = document.querySelector('.popup__save');
-let profileName = document.querySelector('.profile__info-name');
-let profileJob = document.querySelector('.profile__info-description');
+const formEditElement = document.querySelector('.popup__content')
+const nameInput = document.querySelector('.popup__input_type_name');
+const descriptionInput = document.querySelector('.popup__input_type_description');
+const profileName = document.querySelector('.profile__info-name');
+const profileDescription = document.querySelector('.profile__info-description');
 
 const popupAdd = document.querySelector('.popup_add');
 const openPopupAddButton = document.querySelector('.profile__add');
@@ -15,6 +14,7 @@ const closePopupAddButton = document.getElementById('closeButton');
 const cardItem = document.querySelector(".cards__item");
 const cardsImage = document.querySelector('.cards__image');
 const cardsText = document.querySelector('.cards__text');
+const formAddElement = document.querySelector('.popup__content_add');
 
 const itemTemplate = document.querySelector(".cards__item-template")
     .content.querySelector('.cards__item-element');
@@ -64,19 +64,19 @@ function closePopup(popup) {
   popup.classList.remove('popup_opened');
 }
 
-openPopupButton.addEventListener('click', () => {
+openPopupEditButton.addEventListener('click', () => {
   openPopup(popupEdit);
   nameInput.value = profileName.textContent;
-  jobInput.value = profileJob.textContent;
+  descriptionInput.value = profileDescription.textContent;
 });
-closePopupButton.addEventListener('click', () => {
+closePopupEditButton.addEventListener('click', () => {
   closePopup(popupEdit);
 });
 
 openPopupAddButton.addEventListener('click', () => {
   openPopup(popupAdd);
   nameInput.value = profileName.textContent;
-  jobInput.value = profileJob.textContent;
+  descriptionInput.value = profileDescription.textContent;
 });
 closePopupAddButton.addEventListener('click', () => {
   closePopup(popupAdd);
@@ -86,35 +86,31 @@ closePopupImageButton.addEventListener('click', () => {
   closePopup(popupImage);
 })
 
-buttonSaveAdd.addEventListener('click', () => {
-  closePopup(popupAdd);
-})
-
 //Редактирование профиля
-function handlerSubmitForm (event) {
+function handlerSubmitFormEdit (event) {
   event.preventDefault();
   profileName.textContent = nameInput.value;
-  profileJob.textContent = jobInput.value;
+  profileDescription.textContent = descriptionInput.value;
   closePopup(popupEdit);
 }
 
-formElement.addEventListener('submit', handlerSubmitForm);
+formEditElement.addEventListener('submit', handlerSubmitFormEdit);
 
 //Создание карточек
 
-function createdCards(text) {
+function createdCards(data) {
   const newHtmlElement = itemTemplate.cloneNode(true);
   const name = newHtmlElement.querySelector('.cards__text');
   const image = newHtmlElement.querySelector('.cards__image');
-  name.textContent = text.title;
-  image.src = text.link;
-  image.alt = text.title;
-  setListenersForItem(newHtmlElement, text);
+  name.textContent = data.title;
+  image.src = data.link;
+  image.alt = data.title;
+  setListenersForItem(newHtmlElement, data);
   return(newHtmlElement);
 }
 
-function render(text) {
-  const newCard = createdCards(text);
+function renderCard(data) {
+  const newCard = createdCards(data);
   cardItem.prepend(newCard);
 }
 
@@ -122,14 +118,14 @@ function render(text) {
 function handleAddNewCard(event) {
   event.preventDefault();
 
-  render({ title: titleInput.value, link: linkInput.value });
-  titleInput.value = " ";
-  linkInput.value = " ";
+  renderCard({ title: titleInput.value, link: linkInput.value });
+  titleInput.value = "";
+  linkInput.value = "";
   
   closePopup(popupAdd);
 }
 
-popupAdd.addEventListener('submit', handleAddNewCard);
+formAddElement.addEventListener('submit', handleAddNewCard);
 
 //Удаление, Лайк, Попап картинка
 function setListenersForItem(element, text) {
@@ -162,4 +158,4 @@ function handlePreview(text) {
   openPopup(popupImage);
 }
 
-initialCards.forEach(render);
+initialCards.forEach(renderCard);
