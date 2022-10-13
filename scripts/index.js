@@ -26,6 +26,9 @@ const popupImage = document.querySelector('.popup_image');
 const closePopupImageButton = document.querySelector('.popup__close_image');
 const caption = document.querySelector('.picture__caption');
 const picture = document.querySelector('.picture__image');
+const inputElement = document.querySelector('.popup__input_error');
+
+const popupList = Array.from(document.querySelectorAll('.popup'));
 
 const initialCards = [
     {
@@ -58,10 +61,12 @@ const initialCards = [
 //Открытие,закрытие popup
 function openPopup(popup) {
   popup.classList.add('popup_opened');
+  document.addEventListener('keydown', closeEsc);
 }
 
 function closePopup(popup) {
   popup.classList.remove('popup_opened');
+  document.removeEventListener('keydown', closeEsc);
 }
 
 openPopupEditButton.addEventListener('click', () => {
@@ -86,6 +91,23 @@ closePopupImageButton.addEventListener('click', () => {
   closePopup(popupImage);
 })
 
+//функция закрытия попапов по оверлей
+popupList.forEach((popup) => {
+  popup.addEventListener('mousedown', function(event) {
+    if (event.target === event.currentTarget)  {
+      closePopup(popup);
+    };
+  });
+});
+
+  //функция закрытия попапов по Esc
+function closeEsc(event) {
+  const popupOpened = document.querySelector('.popup_opened');
+  if (event.key === 'Escape') {
+    closePopup(popupOpened);
+  };
+};
+
 //Редактирование профиля
 function handlerSubmitFormEdit (event) {
   event.preventDefault();
@@ -97,7 +119,6 @@ function handlerSubmitFormEdit (event) {
 formEditElement.addEventListener('submit', handlerSubmitFormEdit);
 
 //Создание карточек
-
 function createdCards(data) {
   const newHtmlElement = itemTemplate.cloneNode(true);
   const name = newHtmlElement.querySelector('.cards__text');
