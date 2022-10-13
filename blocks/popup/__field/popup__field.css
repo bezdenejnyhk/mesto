@@ -1,19 +1,19 @@
-.form__field {
+.popup__field {
     width: 358px;
     min-height: 44px;
     margin-bottom: 13px;
 }
 
-.form__field:last-of-type {
+.popup__field:last-of-type {
     margin-bottom: 31.34px;
 }
 
 @media screen and (max-width: 520px) {
-    .form__field {
+    .popup__field {
         width: 238px;
     }
 
-    .form__field:last-of-type {
+    .popup__field:last-of-type {
         margin-bottom: 45px;
     }
 }

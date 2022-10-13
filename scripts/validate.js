@@ -3,8 +3,8 @@ const validationConfig = {
   inputSelector: ".popup__input",
   submitButtonSelector: ".popup__save",
   inactiveButtonClass: ".popup__save_inactive",
-  inputErrorClass: "form__input-error_active",
-  errorClass: "form__input-error"
+  inputErrorClass: "popup__input-error_active",
+  errorClass: "popup__input-error"
 };
 
 //функция отображения ошибки
@@ -78,7 +78,6 @@ const toggleButtonState = (inputList, buttonElement, config) => {
 // вешаем слушатели на submit, сбрасываем поведение браузера, вызываем функцию проверки валидации инпута
 const enableValidation = (config) => {
   const formList = Array.from(document.querySelectorAll(config.formSelector));
-
   formList.forEach((formElement) => {
     formElement.addEventListener('submit', (evt) => {
       evt.preventDefault();
