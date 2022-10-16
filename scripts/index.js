@@ -1,5 +1,5 @@
-const openPopupEditButton = document.querySelector('.profile__edit');
-const closePopupEditButton = document.getElementById('closeButtonEdit');
+const PopupEditButtonOpen = document.querySelector('.profile__edit');
+const PopupEditButtonClose = document.getElementById('closeButtonEdit');
 const popupEdit = document.querySelector('.popup_edit');
 
 const formEditElement = document.getElementById('formEditElement');
@@ -9,8 +9,8 @@ const profileName = document.querySelector('.profile__info-name');
 const profileDescription = document.querySelector('.profile__info-description');
 
 const popupAdd = document.querySelector('.popup_add');
-const openPopupAddButton = document.querySelector('.profile__add');
-const closePopupAddButton = document.getElementById('closeButtonAdd');
+const PopupAddButtonOpen = document.querySelector('.profile__add');
+const PopupAddButtonClose = document.getElementById('closeButtonAdd');
 const cardItem = document.querySelector(".cards__item");
 const cardsImage = document.querySelector('.cards__image');
 const cardsText = document.querySelector('.cards__text');
@@ -19,44 +19,17 @@ const formAddElement = document.querySelector('.popup__content_add');
 const itemTemplate = document.querySelector(".cards__item-template")
     .content.querySelector('.cards__item-element');
 
+const buttonElement = document.querySelector(".popup__save");    
 const buttonSaveAdd = document.querySelector(".popup__save_add");
 const titleInput = document.querySelector('.popup__input_type_title');
 const linkInput = document.querySelector('.popup__input_type_link');
 const popupImage = document.querySelector('.popup_image');
-const closePopupImageButton = document.querySelector('.popup__close_image');
+const PopupImageButtonClose = document.querySelector('.popup__close_image');
 const caption = document.querySelector('.picture__caption');
 const picture = document.querySelector('.picture__image');
 const inputElement = document.querySelector('.popup__input_error');
 
 const popupList = Array.from(document.querySelectorAll('.popup'));
-
-const initialCards = [
-    {
-      title: 'Архыз',
-      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
-    },
-    {
-      title: 'Челябинская область',
-      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
-    },
-    {
-      title: 'Иваново',
-      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
-    },
-    {
-      title: 'Камчатка',
-      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
-    },
-    {
-      title: 'Холмогорский район',
-      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
-    },
-    {
-      title: 'Байкал',
-      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
-    }
-]; 
-
 
 //Открытие,закрытие popup
 function openPopup(popup) {
@@ -69,54 +42,47 @@ function closePopup(popup) {
   document.removeEventListener('keydown', closeEsc);
 }
 
-openPopupEditButton.addEventListener('click', () => {
+PopupEditButtonOpen.addEventListener('click', () => {
   openPopup(popupEdit);
   nameInput.value = profileName.textContent;
   descriptionInput.value = profileDescription.textContent;
 });
-closePopupEditButton.addEventListener('click', () => {
-  closePopup(popupEdit);
-});
 
-openPopupAddButton.addEventListener('click', () => {
+PopupAddButtonOpen.addEventListener('click', () => {
   openPopup(popupAdd);
   nameInput.value = profileName.textContent;
   descriptionInput.value = profileDescription.textContent;
 });
-closePopupAddButton.addEventListener('click', () => {
-  closePopup(popupAdd);
-});
 
-closePopupImageButton.addEventListener('click', () => {
-  closePopup(popupImage);
-})
-
-//функция закрытия попапов по оверлей
-popupList.forEach((popup) => {
-  popup.addEventListener('mousedown', function(event) {
-    if (event.target === event.currentTarget)  {
+//функция закрытия попапов по оверлей и кнопке закрытия
+popupList.forEach( (popup) => {
+  popup.addEventListener('mousedown', (event) => {
+    if (event.target.classList.contains('popup_opened')){
+      closePopup(popup);
+    };
+    if (event.target.classList.contains('popup__close')){
       closePopup(popup);
     };
   });
 });
 
-  //функция закрытия попапов по Esc
+//функция закрытия попапов по Esc
 function closeEsc(event) {
-  const popupOpened = document.querySelector('.popup_opened');
   if (event.key === 'Escape') {
+    const popupOpened = document.querySelector('.popup_opened');
     closePopup(popupOpened);
   };
 };
 
 //Редактирование профиля
-function handlerSubmitFormEdit (event) {
+function handleSubmitFormEdit (event) {
   event.preventDefault();
   profileName.textContent = nameInput.value;
   profileDescription.textContent = descriptionInput.value;
   closePopup(popupEdit);
 }
 
-formEditElement.addEventListener('submit', handlerSubmitFormEdit);
+formEditElement.addEventListener('submit', handleSubmitFormEdit);
 
 //Создание карточек
 function createdCards(data) {
@@ -142,7 +108,8 @@ function handleAddNewCard(event) {
   renderCard({ title: titleInput.value, link: linkInput.value });
   titleInput.value = "";
   linkInput.value = "";
-  
+  buttonSaveAdd.disabled = !this.value;
+  buttonSaveAdd.classList.add('popup__save_inactive');
   closePopup(popupAdd);
 }
 

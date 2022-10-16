@@ -3,6 +3,7 @@ const validationConfig = {
   inputSelector: ".popup__input",
   submitButtonSelector: ".popup__save",
   inactiveButtonClass: ".popup__save_inactive",
+  inactiveButtonClassAdd: "popup__save_inactive",
   inputErrorClass: "popup__input-error_active",
   errorClass: "popup__input-error"
 };
@@ -68,10 +69,10 @@ const enableButton = (buttonElement, config) => {
 const toggleButtonState = (inputList, buttonElement, config) => {
   if (hasInvalidInput(inputList)) {
     disableButton(buttonElement, config);
-    buttonElement.classList.add('popup__save_inactive');
+    buttonElement.classList.add(config.inactiveButtonClassAdd);
   } else {
     enableButton(buttonElement, config);
-    buttonElement.classList.remove('popup__save_inactive');
+    buttonElement.classList.remove(config.inactiveButtonClassAdd);
   }
 };
 
@@ -79,10 +80,7 @@ const toggleButtonState = (inputList, buttonElement, config) => {
 const enableValidation = (config) => {
   const formList = Array.from(document.querySelectorAll(config.formSelector));
   formList.forEach((formElement) => {
-    formElement.addEventListener('submit', (evt) => {
-      evt.preventDefault();
-    });
-      setEventListeners(formElement, config);
+    setEventListeners(formElement, config);
   });
 };
 
