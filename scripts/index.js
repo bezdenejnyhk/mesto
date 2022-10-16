@@ -1,5 +1,5 @@
-const PopupEditButtonOpen = document.querySelector('.profile__edit');
-const PopupEditButtonClose = document.getElementById('closeButtonEdit');
+const popupEditButtonOpen = document.querySelector('.profile__edit');
+const popupEditButtonClose = document.getElementById('closeButtonEdit');
 const popupEdit = document.querySelector('.popup_edit');
 
 const formEditElement = document.getElementById('formEditElement');
@@ -9,8 +9,8 @@ const profileName = document.querySelector('.profile__info-name');
 const profileDescription = document.querySelector('.profile__info-description');
 
 const popupAdd = document.querySelector('.popup_add');
-const PopupAddButtonOpen = document.querySelector('.profile__add');
-const PopupAddButtonClose = document.getElementById('closeButtonAdd');
+const popupAddButtonOpen = document.querySelector('.profile__add');
+const popupAddButtonClose = document.getElementById('closeButtonAdd');
 const cardItem = document.querySelector(".cards__item");
 const cardsImage = document.querySelector('.cards__image');
 const cardsText = document.querySelector('.cards__text');
@@ -24,7 +24,7 @@ const buttonSaveAdd = document.querySelector(".popup__save_add");
 const titleInput = document.querySelector('.popup__input_type_title');
 const linkInput = document.querySelector('.popup__input_type_link');
 const popupImage = document.querySelector('.popup_image');
-const PopupImageButtonClose = document.querySelector('.popup__close_image');
+const popupImageButtonClose = document.querySelector('.popup__close_image');
 const caption = document.querySelector('.picture__caption');
 const picture = document.querySelector('.picture__image');
 const inputElement = document.querySelector('.popup__input_error');
@@ -42,13 +42,13 @@ function closePopup(popup) {
   document.removeEventListener('keydown', closeEsc);
 }
 
-PopupEditButtonOpen.addEventListener('click', () => {
+popupEditButtonOpen.addEventListener('click', () => {
   openPopup(popupEdit);
   nameInput.value = profileName.textContent;
   descriptionInput.value = profileDescription.textContent;
 });
 
-PopupAddButtonOpen.addEventListener('click', () => {
+popupAddButtonOpen.addEventListener('click', () => {
   openPopup(popupAdd);
   nameInput.value = profileName.textContent;
   descriptionInput.value = profileDescription.textContent;
