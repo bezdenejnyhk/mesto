@@ -1,4 +1,4 @@
-.cards__delete {
+.item__delete {
     background-image: url(../../../images/Delet-image.svg);
     background-size: contain;
     background-repeat: no-repeat;
@@ -16,7 +16,7 @@
     z-index: 2;
   }
 
-  .cards__delete:hover {
+  .item__delete:hover {
     opacity: 0.6;
     cursor: pointer;
   }

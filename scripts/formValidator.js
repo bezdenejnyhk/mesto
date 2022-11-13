@@ -1,4 +1,4 @@
-export default class formValidator {
+export default class FormValidator {
     constructor(config) {
         this._config = config;
         this._form = document.querySelector(this._config.formSelector);
@@ -52,7 +52,7 @@ export default class formValidator {
 
     // вешаем слушатель на инпут и кнопку, вызываем функцию проверки на валидность
     _setEventListeners() {
-        this._toggleButtonState ();
+        this._toggleButtonState();
         this._inputList.forEach((inputElement) => {
           inputElement.addEventListener('input', () => {
             this._checkInputValidity(inputElement);
@@ -63,14 +63,14 @@ export default class formValidator {
 
     //обновление ошибок и состояния кнопки
     resetValidation() {
-        this._toggleButtonState(this._buttonElement);
-        this._inputList.forEach((inputElement) => {
-          this._hideInputError(inputElement);
-        });
+      this._buttonElement.classList.add(this._config.inactiveButtonClass);
+      this._inputList.forEach((inputElement) => {
+        this._hideInputError(inputElement);
+      });
     }
 
     // вешаем слушатели на submit, сбрасываем поведение браузера, вызываем функцию проверки валидации инпута
     enableValidation() {
-        this._setEventListeners(this._form);
+        this._setEventListeners();
     }
 }
