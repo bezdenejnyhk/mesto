@@ -1,8 +1,5 @@
 import openPopup from "./index.js";
-
-const popupImage = document.querySelector('.popup_image');
-const picture = popupImage.querySelector('.picture__image');
-const caption = popupImage.querySelector('.picture__caption'); 
+import {popupImage, picture, caption} from './index.js';
 
 export default class Card {
     constructor(data, templateSelector) {
@@ -15,7 +12,7 @@ export default class Card {
         const cardElement = document
         .querySelector(this._templateSelector)
         .content
-        .querySelector('.item__element')
+        .querySelector('.item')
         .cloneNode(true);
 
         return cardElement;

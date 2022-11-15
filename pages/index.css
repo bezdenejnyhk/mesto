@@ -18,7 +18,6 @@
 
 @import url(../blocks/item/item.css);
 @import url(../blocks/item/__delete/item__delete.css);
-@import url(../blocks/item/__element/item__element.css);
 @import url(../blocks/item/__elements/item__elements.css);
 @import url(../blocks/item/__image/item__image.css);
 @import url(../blocks/item/__like/item__like.css);

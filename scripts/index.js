@@ -11,6 +11,10 @@ const validationConfig = {
   errorClass: "popup__input-error"
 };
 
+export const popupImage = document.querySelector('.popup_image');
+export const picture = popupImage.querySelector('.picture__image');
+export const caption = popupImage.querySelector('.picture__caption');
+
 const popupEditButtonOpen = document.querySelector('.profile__edit');
 const popupEdit = document.querySelector('.popup_edit');
 const formEditElement = document.getElementById('formEditElement');
@@ -20,7 +24,7 @@ const profileName = document.querySelector('.profile__info-name');
 const profileDescription = document.querySelector('.profile__info-description');
 const popupAdd = document.querySelector('.popup_add');
 const popupAddButtonOpen = document.querySelector('.profile__add');
-const cardItem = document.querySelector(".item");
+const cardItem = document.querySelector(".cards");
 const formAddElement = document.querySelector('.popup__content_add');   
 const titleInput = document.querySelector('.popup__input_type_title');
 const linkInput = document.querySelector('.popup__input_type_link');  
