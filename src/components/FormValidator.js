@@ -1,8 +1,9 @@
 export default class FormValidator {
-  constructor(config) {
+  constructor({config, formSelector}) {
     this._config = config;
-    this._form = document.querySelector(this._config.formSelector);
-    this._buttonElement = this._form.querySelector(this._config.validationConfig.submitButtonSelector);
+    this._formSelector = formSelector;
+    this._form = document.querySelector(this._formSelector);
+    this._buttonElement = this._form.querySelector(this._config.submitButtonSelector);
     this._inputList = Array.from(document.querySelectorAll(this._config.inputSelector));
   }
 
