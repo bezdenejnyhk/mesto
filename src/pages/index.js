@@ -52,12 +52,8 @@ function handleCardClick(link, title) {
 // ПОПАП ДОБАВЛЕНИЯ НОВЫХ КАРТОЧЕК
 const newCardPopup = new PopupWithForm({
   popupSelector: '.popup_add',
-  handleFormSubmit: () => {
-    const data = {
-      title: titleInput.value,
-      link: linkInput.value,
-    };    
-    cardsContainer.addItem(createCard(data));
+  handleFormSubmit: () => {  
+    cardsContainer.addItem(createCard({ title: titleInput.value, link: linkInput.value,}));
     newCardPopup.close();
   }
 });

@@ -2,19 +2,20 @@ export default class FormValidator {
   constructor({config, formSelector}) {
     this._config = config;
     this._formSelector = formSelector;
+    console.log(this._formSelector);
     this._form = document.querySelector(this._formSelector);
     this._buttonElement = this._form.querySelector(this._config.submitButtonSelector);
     this._inputList = Array.from(document.querySelectorAll(this._config.inputSelector));
   }
 
-    // проверяем, валидный ли инпут
+  // проверяем, валидный ли инпут
   _hasInvalidInput() {
     return this._inputList.some((inputElement) => {
       return !inputElement.validity.valid;
     });
   };
   
-    // переключаем состояние кнопки
+  // переключаем состояние кнопки
   _toggleButtonState() {
     if (this._hasInvalidInput()) {
       this._buttonElement.classList.add(this._config.inactiveButtonClass);
@@ -26,7 +27,7 @@ export default class FormValidator {
         
   };
 
-    //функция отображения ошибки
+  //функция отображения ошибки
   _showInputError(inputElement, errorMessage) {
     const errorElement = document.querySelector(`#${inputElement.id}-error`);
     inputElement.classList.add(this._config.inputErrorClass);
@@ -34,7 +35,7 @@ export default class FormValidator {
     errorElement.classList.add(this._config.errorClass);
   };
   
-    //функция скрытия ошибки
+  //функция скрытия ошибки
   _hideInputError(inputElement) {
     const errorElement = document.querySelector(`#${inputElement.id}-error`);
     inputElement.classList.remove(this._config.inputErrorClass);
@@ -42,7 +43,7 @@ export default class FormValidator {
     errorElement.textContent = '';
   };
 
-    // проверяем инпут на валидность
+  // проверяем инпут на валидность
   _checkInputValidity(inputElement) {
     if (!inputElement.validity.valid) {
       this._showInputError(inputElement, inputElement.validationMessage);
@@ -51,7 +52,7 @@ export default class FormValidator {
     }
   };
 
-    // вешаем слушатель на инпут и кнопку, вызываем функцию проверки на валидность
+  // вешаем слушатель на инпут и кнопку, вызываем функцию проверки на валидность
   _setEventListeners() {
     this._toggleButtonState();
     this._inputList.forEach((inputElement) => {
@@ -62,15 +63,15 @@ export default class FormValidator {
     });
   };
 
-    //обновление ошибок и состояния кнопки
+  //обновление ошибок и состояния кнопки
   resetValidation() {
-    // this._buttonElement.classList.add(this._config.inactiveButtonClass);
+    this._toggleButtonState();
     this._inputList.forEach((inputElement) => {
       this._hideInputError(inputElement);
     });
   }
 
-    // вешаем слушатели на submit, сбрасываем поведение браузера, вызываем функцию проверки валидации инпута
+  // вешаем слушатели на submit, сбрасываем поведение браузера, вызываем функцию проверки валидации инпута
   enableValidation() {
     this._setEventListeners();
   }
