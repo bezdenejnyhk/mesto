@@ -83,8 +83,8 @@ const userInfo = new UserInfo({
 })
 
 popupEditButtonOpen.addEventListener('click', () => {
+  profileEditValidation.resetValidation();
   profileName.value = userInfo.getUserInfo().nameInput;
   profileDescription.value = userInfo.getUserInfo().descriptionInput;
-  profileEditValidation.resetValidation();
   profilePopup.open();
 });

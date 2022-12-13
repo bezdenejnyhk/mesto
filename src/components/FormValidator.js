@@ -2,11 +2,19 @@ export default class FormValidator {
   constructor({config, formSelector}) {
     this._config = config;
     this._formSelector = formSelector;
-    console.log(this._formSelector);
     this._form = document.querySelector(this._formSelector);
+    this._inputList = Array.from(this._form.querySelectorAll(this._config.inputSelector));
     this._buttonElement = this._form.querySelector(this._config.submitButtonSelector);
-    this._inputList = Array.from(document.querySelectorAll(this._config.inputSelector));
   }
+
+  // проверяем инпут на валидность
+  _checkInputValidity(inputElement) {
+    if (!inputElement.validity.valid) {
+      this._showInputError(inputElement, inputElement.validationMessage);
+    } else {
+      this._hideInputError(inputElement);
+    }
+  };
 
   // проверяем, валидный ли инпут
   _hasInvalidInput() {
@@ -23,8 +31,7 @@ export default class FormValidator {
     } else {
       this._buttonElement.classList.remove(this._config.inactiveButtonClass);
       this._buttonElement.removeAttribute('disabled');
-    }
-        
+    }    
   };
 
   //функция отображения ошибки
@@ -39,17 +46,9 @@ export default class FormValidator {
   _hideInputError(inputElement) {
     const errorElement = document.querySelector(`#${inputElement.id}-error`);
     inputElement.classList.remove(this._config.inputErrorClass);
-    errorElement.classList.remove(this._config.errorClass);
     errorElement.textContent = '';
-  };
+    errorElement.classList.remove(this._config.errorClass);
 
-  // проверяем инпут на валидность
-  _checkInputValidity(inputElement) {
-    if (!inputElement.validity.valid) {
-      this._showInputError(inputElement, inputElement.validationMessage);
-    } else {
-      this._hideInputError(inputElement);
-    }
   };
 
   // вешаем слушатель на инпут и кнопку, вызываем функцию проверки на валидность
