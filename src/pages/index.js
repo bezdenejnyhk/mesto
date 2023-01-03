@@ -52,8 +52,8 @@ function handleCardClick(link, title) {
 // ПОПАП ДОБАВЛЕНИЯ НОВЫХ КАРТОЧЕК
 const newCardPopup = new PopupWithForm({
   popupSelector: '.popup_add',
-  handleFormSubmit: () => {  
-    const data = {title: titleInput.value, link: linkInput.value}
+  handleFormSubmit: (data) => {  
+    data = {title: titleInput.value, link: linkInput.value}
     cardsContainer.addItem(createCard(data));
     newCardPopup.close();
   }
