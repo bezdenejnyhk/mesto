@@ -5,12 +5,6 @@ export default class Popup {
         this._escapeClose = this._handleEscClose.bind(this);
     }
 
-    setEventListeners() {
-        this._closeButton.addEventListener('click', () => {
-            this.close();
-        })
-    }
-
     //Открытие popup
     open() {
         this._popup.classList.add('popup_opened');

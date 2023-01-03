@@ -53,15 +53,14 @@ function handleCardClick(link, title) {
 const newCardPopup = new PopupWithForm({
   popupSelector: '.popup_add',
   handleFormSubmit: () => {  
-    cardsContainer.addItem(createCard({ title: titleInput.value, link: linkInput.value,}));
+    const data = {title: titleInput.value, link: linkInput.value}
+    cardsContainer.addItem(createCard(data));
     newCardPopup.close();
   }
 });
 newCardPopup.setEventListeners();
 
 popupAddButtonOpen.addEventListener('click', () => {
-  nameInput.value = profileName.textContent;
-  descriptionInput.value = profileDescription.textContent;
   cardAddValidation.resetValidation();
   newCardPopup.open();
 });
@@ -84,7 +83,8 @@ const userInfo = new UserInfo({
 
 popupEditButtonOpen.addEventListener('click', () => {
   profileEditValidation.resetValidation();
-  profileName.value = userInfo.getUserInfo().nameInput;
-  profileDescription.value = userInfo.getUserInfo().descriptionInput;
+  const {job, name} = userInfo.getUserInfo()
+  nameInput.value = name;
+  descriptionInput.value = job;
   profilePopup.open();
 });
