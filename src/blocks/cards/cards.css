@@ -1,4 +1,5 @@
 .cards {
+    align-items: baseline;
     justify-content: center;
     justify-items: stretch;
     max-width: 882px;
