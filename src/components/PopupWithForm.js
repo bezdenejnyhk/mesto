@@ -7,6 +7,7 @@ export default class PopupWithForm extends Popup {
     this._popupForm = this._popup.querySelector('.popup__content');
     this._inputList = Array.from(this._popupForm.querySelectorAll('.popup__input'));
     this._saveButton = this._popupForm.querySelector('.popup__save');
+    this._saveButtonTxt = this._saveButton.textContent;
   }
 
   // Получаем данные из формы
@@ -34,4 +35,14 @@ export default class PopupWithForm extends Popup {
     super.close();
     this._popupForm.reset();
   }
+
+  // Изменяем состояние кнопки во время загрузки
+  loading(isLoading) {
+    if (isLoading) {
+      this._saveButton.textContent = 'Сохранение...'
+    } else {
+      this._saveButton.textContent = this._saveButtonTxt;
+    }
+  }
+  
 }

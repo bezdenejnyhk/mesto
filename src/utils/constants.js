@@ -49,3 +49,4 @@ export const popupAddButtonOpen = document.querySelector('.profile__add');
 export const titleInput = document.querySelector('.popup__input_type_title');
 export const linkInput = document.querySelector('.popup__input_type_link');
 export const popupBtnEditSave = document.querySelector('.popup__save_edit');
+export const buttonEditAvatar = document.querySelector('.profile__avatar-button')
