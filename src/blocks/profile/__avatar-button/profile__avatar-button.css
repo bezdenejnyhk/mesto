@@ -10,7 +10,7 @@
     background-repeat: no-repeat;
     background-position: center;
     transition: .8s ease;
-    left: 0
+    left: 0;
   }
   
   .profile__avatar-button:hover {
