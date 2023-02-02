@@ -81,12 +81,12 @@ export default class Api {
     }
   
     // Редактирование аватара пользователя через попап
-    editAvatar(data) {
+    editAvatar(userData) {
       return fetch(`${this._baseUrl}/users/me/avatar`, {
         method: 'PATCH',
         headers: this._headers,
         body: JSON.stringify({
-          avatar: data.avatar
+          avatar: userData.avatar
         })
       })
         .then(res => this._parseResponse(res));

@@ -10,6 +10,10 @@ export default class Section {
         });
     }
     
+    addInitialCards(data) {
+        this._container.append(data);
+      }
+
     addItem(data) {
         this._container.prepend(data);
     }

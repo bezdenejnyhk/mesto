@@ -8,7 +8,7 @@ export default class PopupWithConfirmation extends Popup {
   }
 
   // принимает коллбэк на удаление карточки
-  submitCallback(removing) {
+  submitHandler(removing) {
     this._handleSubmit = removing;
   }
 

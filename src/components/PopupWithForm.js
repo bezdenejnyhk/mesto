@@ -26,7 +26,6 @@ export default class PopupWithForm extends Popup {
     this._popupForm.addEventListener('submit', (event) => {
       event.preventDefault();
       this._handleFormSubmit(this._getInputValues());
-      this.close();
     })
   }
 
@@ -37,7 +36,7 @@ export default class PopupWithForm extends Popup {
   }
 
   // Изменяем состояние кнопки во время загрузки
-  loading(isLoading) {
+  renderLoading(isLoading) {
     if (isLoading) {
       this._saveButton.textContent = 'Сохранение...'
     } else {
