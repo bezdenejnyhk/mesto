@@ -23,13 +23,6 @@
 17. Минификация и транспиляция JS Babel
 18. API сервера Яндекс.Практикум
 19. Webpack
+
 #Ссылки на проект и на макет:
 Проект на Github Pages:https://bezdenejnyhk.github.io/mesto/
-#Инструкция для работы с проектом:
-git clone git@github.com:VeraChernushina/mesto.git
-cd mesto
-npm i webpack --save-dev
-npm run build
-npm run dev
-#Задеплоить проект в Github Pages
-npm run deploy
