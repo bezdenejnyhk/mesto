@@ -24,5 +24,5 @@
 18. API сервера Яндекс.Практикум
 19. Webpack
 
-#Ссылки на проект и на макет:
+#Ссылки на проект:
 Проект на Github Pages:https://bezdenejnyhk.github.io/mesto/
